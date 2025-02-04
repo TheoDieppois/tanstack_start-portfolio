@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Acorn";
+  src: url("/fonts/acorn-bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@theme {
+  --font-acorn: "Acorn", "sans-serif";
+  --color-sarcele-800: #0b5145;
+  --color-sarcele-500: #16a78e;
+  --color-sarcele-300: rgb(153, 255, 230);
+}
