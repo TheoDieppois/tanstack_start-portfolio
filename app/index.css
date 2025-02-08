@@ -11,9 +11,48 @@
   --font-acorn: "Acorn", "sans-serif";
   --color-sarcele-800: #0b5145;
   --color-sarcele-500: #16a78e;
-  --color-sarcele-300: rgb(153, 255, 230);
+  --color-sarcele-300: #99ffe6;
+}
+
+@layer utilities {
+  .container {
+    @media (width >= 40rem) {
+      max-width: 40rem;
+    }
+
+    @media (width >= 48rem) {
+      max-width: 48rem;
+    }
+
+    @media (width >= 64rem) {
+      max-width: 64rem;
+    }
+
+    @media (width >= 80rem) {
+      max-width: 75rem;
+    }
+  }
+}
+
+.hero-text {
+  font-size: clamp(4rem, 0.5692rem + 8.5vw, 13.75rem);
 }
 
 .animation-text {
   font-size: clamp(3rem, 0.5692rem + 5.2vw, 8rem);
+}
+
+.noise-overlay {
+  background-image: url("/images/noise.png");
+  mix-blend-mode: overlay;
+  background-position: 0 0;
+  background-size: 300px;
+  pointer-events: none;
+  mask-image: linear-gradient(to bottom, black 0%, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 80%,
+    transparent 100%
+  );
 }
