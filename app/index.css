@@ -13,3 +13,7 @@
   --color-sarcele-500: #16a78e;
   --color-sarcele-300: rgb(153, 255, 230);
 }
+
+.animation-text {
+  font-size: clamp(3rem, 0.5692rem + 5.2vw, 8rem);
+}
