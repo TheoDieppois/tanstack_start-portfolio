@@ -19,30 +19,26 @@ export const useIntroAnimation = () => {
 
   const textSequence = [
     "Bonjour",
-    "Hello",
     "Guten Tag",
+    "Olá",
     "مرحبا",
     "你好",
     "こんにちは",
+    "Ciao",
+    "Hola",
+    "Hello",
   ];
 
   useGSAP(() => {
     const textSequenceTl = gsap.timeline();
 
     textSequence.forEach((text) => {
-      textSequenceTl
-        .to(textRef.current, {
-          duration: 0.1,
-          opacity: 0,
-          onComplete: () => {
-            if (textRef.current) textRef.current.textContent = text;
-          },
-        })
-        .to(textRef.current, {
-          duration: 0.3,
-          opacity: 1,
-        })
-        .to({}, { duration: 0.3 });
+      textSequenceTl.to(textRef.current, {
+        duration: 0.2,
+        onComplete: () => {
+          if (textRef.current) textRef.current.textContent = `• ${text}`;
+        },
+      });
     });
 
     const overlayTl = gsap.timeline({
