@@ -1,17 +1,23 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: "Acorn";
-  src: url("/fonts/acorn-bold.woff") format("woff");
-  font-weight: bold;
-  font-style: normal;
-}
-
 @theme {
   --font-acorn: "Acorn", "sans-serif";
   --color-sarcele-800: #0b5145;
   --color-sarcele-500: #16a78e;
   --color-sarcele-300: #99ffe6;
+
+  --animate-moveUpAndFade: moveUpAndFade 2s infinite;
+
+  --breakpoint-xs: 36rem;
+}
+
+@layer base {
+  @font-face {
+    font-family: "Acorn";
+    src: url("/fonts/acorn-bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+  }
 }
 
 @layer utilities {
@@ -32,14 +38,19 @@
       max-width: 75rem;
     }
   }
-}
 
-.hero-text {
-  font-size: clamp(4rem, 0.5692rem + 8.5vw, 13.75rem);
-}
+  .hero-text {
+    font-size: clamp(4rem, 0.5692rem + 8.5vw, 12rem);
+  }
 
-.animation-text {
-  font-size: clamp(3rem, 0.5692rem + 5.2vw, 8rem);
+  .hero-paragraph-text {
+    @apply text-center leading-relaxed;
+    font-size: clamp(1rem, 0.8852rem + 0.3898vw, 1.375rem);
+  }
+
+  .absolute-center {
+    @apply absolute left-1/2 top-1/2 -translate-1/2;
+  }
 }
 
 .noise-overlay {
@@ -55,4 +66,19 @@
     black 80%,
     transparent 100%
   );
+}
+
+@keyframes moveUpAndFade {
+  0% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
 }
