@@ -1,0 +1,79 @@
+@import "tailwindcss" source("../");
+
+@theme {
+  --font-acorn: "Acorn", "sans-serif";
+  --color-sarcele-800: #0b5145;
+  --color-sarcele-500: #16a78e;
+  --color-sarcele-300: #99ffe6;
+
+  --animate-moveUpAndFade: moveUpAndFade 2s infinite;
+
+  --breakpoint-xs: 36rem;
+}
+
+@layer base {
+  @font-face {
+    font-family: "Acorn";
+    src: url("/fonts/acorn-bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+  }
+}
+
+@layer utilities {
+  .container {
+    @media (width >= 40rem) {
+      max-width: 40rem;
+    }
+
+    @media (width >= 48rem) {
+      max-width: 48rem;
+    }
+
+    @media (width >= 64rem) {
+      max-width: 64rem;
+    }
+
+    @media (width >= 80rem) {
+      max-width: 75rem;
+    }
+  }
+
+  .hero-text {
+    font-size: clamp(4rem, 0.5692rem + 8.5vw, 12rem);
+  }
+
+  .hero-paragraph-text {
+    @apply text-center leading-relaxed;
+    font-size: clamp(1rem, 0.8852rem + 0.3898vw, 1.375rem);
+  }
+
+  .absolute-center {
+    @apply absolute top-1/2 left-1/2 -translate-1/2;
+  }
+}
+
+.noise-overlay {
+  background-image: url("/images/noise.png");
+  mix-blend-mode: overlay;
+  background-position: 0 0;
+  background-size: 300px;
+  pointer-events: none;
+  mask-image: linear-gradient(to bottom, black 0%, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 80%, transparent 100%);
+}
+
+@keyframes moveUpAndFade {
+  0% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+}
