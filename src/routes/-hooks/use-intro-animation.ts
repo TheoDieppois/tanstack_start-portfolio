@@ -1,8 +1,6 @@
-import { useRef, useState } from "react";
-import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-
-gsap.registerPlugin(useGSAP);
+import gsap from "gsap";
+import { useRef, useState } from "react";
 
 export const useIntroAnimation = () => {
   const [isLoaded, setIsLoaded] = useState(false);
