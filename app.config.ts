@@ -11,4 +11,23 @@ export default defineConfig({
       tailwindcss(),
     ],
   },
+
+  // https://react.dev/learn/react-compiler
+  react: {
+    babel: {
+      plugins: [
+        [
+          "babel-plugin-react-compiler",
+          {
+            target: "19",
+          },
+        ],
+      ],
+    },
+  },
+
+  tsr: {
+    // https://github.com/TanStack/router/discussions/2863#discussioncomment-12458714
+    appDirectory: "./src",
+  },
 });
