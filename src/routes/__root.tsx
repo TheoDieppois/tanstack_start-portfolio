@@ -9,7 +9,10 @@ import {
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 
+import "lenis/dist/lenis.css";
 import appCss from "~/styles/app.css?url";
+
+import { useLenis } from "~/hooks/useLenis";
 
 export const Route = createRootRouteWithContext<{
   queryClient: QueryClient;
@@ -41,6 +44,8 @@ function RootComponent() {
 }
 
 function RootDocument({ children }: { readonly children: React.ReactNode }) {
+  useLenis();
+
   return (
     <html suppressHydrationWarning>
       <head>
