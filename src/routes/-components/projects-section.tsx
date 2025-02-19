@@ -38,7 +38,7 @@ const ProjectsSection = () => {
         {projects.map((project) => (
           <div
             key={project.title}
-            className="xs:h-[380px] group relative flex h-[280px] items-center justify-center rounded-3xl bg-[#40756c]/50 p-2 shadow-[0_40px_80px_#11044980] outline outline-[#16a78f]/95 sm:h-[400px] md:h-[450px] lg:h-[600px]"
+            className="xs:h-[380px] group relative flex h-[280px] items-center justify-center rounded-3xl bg-[#40756c]/50 p-2 shadow-[0_40px_80px_#062c1680] outline outline-[#16a78f]/95 sm:h-[400px] md:h-[450px] lg:h-[600px]"
           >
             <div className="absolute inset-x-0 top-0 z-[10] mb-[-1px] h-[1px] bg-[linear-gradient(to_right,#0000_20%,#f2fff4_50%,#0000_80%)]" />
             <a
