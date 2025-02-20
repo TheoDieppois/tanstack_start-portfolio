@@ -1,10 +1,12 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
-export const useIntroAnimation = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
+type UseIntroAnimationProps = {
+  endIntro: () => void;
+};
 
+export const useIntroAnimation = ({ endIntro }: UseIntroAnimationProps) => {
   const textRef = useRef<HTMLParagraphElement>(null);
   const overlayContainer = useRef<HTMLDivElement>(null);
   const overlayPath = useRef<SVGPathElement>(null);
@@ -65,7 +67,7 @@ export const useIntroAnimation = () => {
       })
       .to(overlayContainer.current, {
         delay: 0.5,
-        duration: 1,
+        duration: 0.3,
         ease: "power1",
         opacity: 0,
       });
@@ -75,7 +77,7 @@ export const useIntroAnimation = () => {
     });
 
     overlayTl.eventCallback("onComplete", () => {
-      setIsLoaded(true);
+      endIntro();
     });
   });
 
@@ -83,6 +85,5 @@ export const useIntroAnimation = () => {
     textRef,
     overlayContainer,
     overlayPath,
-    isLoaded,
   };
 };

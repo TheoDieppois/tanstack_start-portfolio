@@ -1,9 +1,14 @@
+import { useIntro } from "~/context/intro-context";
 import { useIntroAnimation } from "../-hooks/use-intro-animation";
 
 export const IntroLoader = () => {
-  const { textRef, overlayContainer, overlayPath, isLoaded } = useIntroAnimation();
+  const { isIntroDone, endIntro } = useIntro();
 
-  if (isLoaded) return null;
+  const { textRef, overlayContainer, overlayPath } = useIntroAnimation({
+    endIntro,
+  });
+
+  if (isIntroDone) return null;
 
   return (
     <div
@@ -12,7 +17,7 @@ export const IntroLoader = () => {
     >
       <p
         ref={textRef}
-        className="font-acorn absolute-center text-[clamp(3rem,0.5692rem+5.2vw,8rem)] text-white"
+        className="font-acorn absolute-center w-full text-center text-[clamp(3rem,0.5692rem+5.2vw,8rem)] text-white"
       />
 
       <svg
