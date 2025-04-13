@@ -13,7 +13,7 @@ export const IntroLoader = () => {
     >
       <p
         ref={textRef}
-        className="animation-text absolute text-white font-acorn text-[70px] left-1/2 top-1/2 -translate-1/2"
+        className="text-[clamp(3rem,0.5692rem+5.2vw,8rem)] text-white font-acorn absolute-center"
       />
 
       <svg
