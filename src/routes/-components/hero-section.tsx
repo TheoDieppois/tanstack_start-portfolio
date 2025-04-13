@@ -1,12 +1,12 @@
 export const HeroSection = () => {
   return (
-    <section className="container mx-auto px-6 grid grid-cols-1 gap-6 place-content-center min-h-screen">
+    <section className="container mx-auto grid min-h-screen grid-cols-1 place-content-center gap-6 px-6">
       <div className="xs:px-0 flex flex-col items-center justify-center gap-y-8 px-1.5 sm:gap-y-16">
         <div className="relative">
           <img
             src="/svg/star.svg"
             alt=""
-            className="xs:-left-10 xs:-top-12 absolute -left-32 -top-10 hidden sm:-left-16 sm:-top-14 md:-left-24 md:block 2xl:-left-36 2xl:-top-16"
+            className="xs:-left-10 xs:-top-12 absolute -top-10 -left-32 hidden sm:-top-14 sm:-left-16 md:-left-24 md:block 2xl:-top-16 2xl:-left-36"
           />
 
           <h1 className="hero-text font-acorn text-sarcele-300 text-center leading-[1.4]">
@@ -15,12 +15,12 @@ export const HeroSection = () => {
           <img
             src="/svg/star.svg"
             alt=""
-            className="xs:-right-10 xs:-bottom-12 absolute -bottom-10 -right-32 hidden sm:-bottom-14 sm:-right-16 md:-right-24 md:block 2xl:-bottom-16 2xl:-right-36"
+            className="xs:-right-10 xs:-bottom-12 absolute -right-32 -bottom-10 hidden sm:-right-16 sm:-bottom-14 md:-right-24 md:block 2xl:-right-36 2xl:-bottom-16"
           />
         </div>
         <p className="text-sarcele-300 hero-paragraph-text max-w-[48rem]">
-          I'm a developer with a passion for building web applications. I'm
-          currently working as a developer at a company called Sarcele.
+          I'm a developer with a passion for building web applications. I'm currently
+          working as a developer at a company called ABECEDAIRE.
         </p>
       </div>
       <div className="xs:bottom-10 xs:absolute xs:left-0 relative mt-10 flex w-full items-center justify-center">

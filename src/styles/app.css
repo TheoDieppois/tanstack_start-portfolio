@@ -1,7 +1,8 @@
-@import "tailwindcss";
+@import "tailwindcss" source("../");
 
 @theme {
   --font-acorn: "Acorn", "sans-serif";
+  --color-sarcele-900: #062c16;
   --color-sarcele-800: #0b5145;
   --color-sarcele-500: #16a78e;
   --color-sarcele-300: #99ffe6;
@@ -49,7 +50,7 @@
   }
 
   .absolute-center {
-    @apply absolute left-1/2 top-1/2 -translate-1/2;
+    @apply absolute top-1/2 left-1/2 -translate-1/2;
   }
 }
 
@@ -60,12 +61,7 @@
   background-size: 300px;
   pointer-events: none;
   mask-image: linear-gradient(to bottom, black 0%, black 80%, transparent 100%);
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    black 0%,
-    black 80%,
-    transparent 100%
-  );
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 80%, transparent 100%);
 }
 
 @keyframes moveUpAndFade {
