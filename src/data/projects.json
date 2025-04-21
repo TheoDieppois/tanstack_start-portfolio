@@ -1,0 +1,179 @@
+{
+  "projects": [
+    {
+      "slug": "armada-2023",
+      "title": "Armada 2023",
+      "context": {
+        "description": "L'Armada de Rouen est l'un des plus grands événements maritimes gratuits au monde, attirant près de <strong>3,8 millions de visiteurs</strong> sur une période de 10 jours. Pour cette édition 2023, l'association organisatrice souhaitait <strong>moderniser l'expérience visiteur</strong> avec une application mobile dédiée. Après avoir développé la première version de l'application en 2019, nous avons été recontactés pour concevoir une nouvelle version, indépendante, plus robuste et plus riche en fonctionnalités."
+      },
+      "objectives": [
+        "Offrir un <strong>compagnon de visite</strong> intuitif, utile et accessible à tous les publics.",
+        "Gérer efficacement <strong>la charge importante d'utilisateurs</strong> simultanés.",
+        "Intégrer une <strong>expérience personnalisée et évolutive</strong>, multilingue.",
+        "Donner aux équipes de l'Armada et de Paris-Normandie des outils pour <strong>communiquer en temps réel</strong> avec les visiteurs.",
+        "Maintenir une cohérence visuelle forte avec <strong>l'identité graphique</strong> de l'événement."
+      ],
+      "solutions": [
+        "<strong>Application mobile (iOS/Android)</strong> développée en React Native.",
+        "<strong>Carte interactive</strong> avec géolocalisation, filtres, itinéraires piétons, et POI enrichis.",
+        "<strong>Agenda événementiel</strong> et système de rappel via notifications.",
+        "<strong>Fonctionnement hors-ligne</strong> avec mise en cache locale des contenus.",
+        "<strong>Multilingue automatique</strong> FR/EN avec détection du smartphone.",
+        "<strong>Système de notifications push</strong>.",
+        "<strong>Analytics & monitoring</strong> (usage, téléchargements, interactions…).",
+        "<strong>Infrastructure scalable</strong> avec haute disponibilité."
+      ],
+      "role": [
+        "Cadrage technique et participation à la rédaction de la proposition initiale.",
+        "Participation à la conception UX/UI des interfaces.",
+        "Développement de l'app mobile.",
+        "Implémentation du système d'itinéraires piétons.",
+        "Implémentation du système de notifications avec Firebase.",
+        "Pilotage de l'équipe de dévelopement.",
+        "Réalisation des tests, recettage, suivi de mise en production, et support en temps réel pendant l'événement."
+      ],
+      "result": {
+        "description": "Une application stable, intuitive, fonctionnelle en hors-ligne, déployée en temps et en heure. - Une application téléchargée plus de <strong>70 000 fois</strong> au cours de l'évènement. - Des retours très positifs des visiteurs (stores et retours directs) avec une <strong>note moyenne</strong> de <strong>4.7</strong> ⭐. - Un gain d'autonomie pour l'équipe Armada dans la mise à jour des contenus. - Un projet renouvelé avec succès, ancré dans le patrimoine numérique de l'événement."
+      },
+      "technologies": {
+        "frontend": [
+          "<strong>Frontend :</strong> React Native - WatermelonDB (Cache local & offline first) - Mapbox"
+        ],
+        "backend": "<strong>Backend :</strong> API Laravel - Firebase Cloud Messaging (notifications push) - OSRM (guidage piéton) - Airtable (gestion de contenus)",
+        "infrastructure": "<strong>Infrastructure :</strong> Google Cloud Platform (hébergement OSRM) - OVH Load Balancer - Zabbix + Grafana (monitoring & alerting)"
+      },
+      "images": [
+        "/images/projects/armada/armada-1.png",
+        "/images/projects/armada/armada-2.png",
+        "/images/projects/armada/armada-3.png"
+      ]
+    },
+    {
+      "slug": "assistant-ia-evreux-normandie-attractivite",
+      "title": "Assistant IA",
+      "context": {
+        "description": "Dans le cadre de la refonte de son site internet, la collectivité <strong>Évreux Normandie Attractivité</strong> souhaitait intégrer un <strong>assistant conversationnel intelligent</strong> pour guider les utilisateurs dans leur recherche d'informations.Ce chatbot devait offrir une expérience fluide, intuitive et fiable, tout en restant <strong>100 % contrôlable</strong> par l'équipe ENA via un espace d'administration dédié."
+      },
+      "objectives": [
+        "Améliorer l'expérience utilisateur du site en apportant une <strong>aide en temps réel</strong> via un assistant IA.",
+        "Proposer des réponses <strong>pertinentes, contextualisées et vérifiables</strong>, basées sur une base documentaire maîtrisée.",
+        "Offrir à l'équipe ENA une <strong>autonomie complète</strong> pour la gestion des contenus, des messages et des performances du chatbot."
+      ],
+      "solutions": [
+        "Développement d'un chatbot basé sur l'approche RAG (Retrieval-Augmented Generation) - Base de connaissances - Modèle de langage avancé (LLM) - Mémoire conversationnelle",
+        "Réponses avec citation de sources cliquables (PDF ou pages de site web)",
+        "Redirection vers un formulaire de contact intelligent en cas de non-réponse",
+        "Disponibilité 24/7 avec monitoring temps réel",
+        "Espace d'administration sur mesure pour la gestion des contenus, des messages et des performances du chatbot.",
+        "Centre d'aide pour suivre les demandes et questions restées sans réponse",
+        "Module d'analyse complet (requêtes, sujets fréquents, taux de réponse…)",
+        "Gestion fine des rôles (lecteur, éditeur, admin, super-admin)"
+      ],
+      "role": [
+        "Définition des flux RAG (préparation des prompts, structuration de la base de connaissances)",
+        "Développement de l'espace d'administration (CMS, analytics, gestion des rôles, upload des documents)",
+        "Suivi du projet (recettage, mise en production, formation client)"
+      ],
+      "result": {
+        "description": "Un assistant IA fiable, transparent et maîtrisé par l'équipe ENA - Des réponses pertinentes et claires, renforcées par la citation des sources - Un outil évolutif : ajustable en autonomie grâce à l'interface de gestion"
+      },
+      "technologies": {
+        "frontend": [
+          "<strong>Frontend :</strong> Next.js - Zustand - Tailwind CSS - Tanstack Query (ex React Query) - TypeScript"
+        ],
+        "backend": "<strong>Backend & IA :</strong> Nest.js - LangChain - OpenAI - ChromaDB (Base vectorielle)",
+        "infrastructure": "<strong>Infrastructure :</strong> OVH Public Cloud - Azure AI Services - Docker - Traefik"
+      },
+      "images": [
+        "/images/projects/evreux/evreux-1.png",
+        "/images/projects/evreux/evreux-2.png"
+      ]
+    },
+    {
+      "slug": "application-evenementielle-normandie-ai",
+      "title": "Application web mobile - Normandie.AI",
+      "context": {
+        "description": "L’association Normandie.AI, dédiée à la promotion de l’intelligence artificielle dans la région, a organisé son tout premier événement le jeudi 19 décembre 2024. Une journée rythmée par des conférences, ateliers et temps d’échange, réunissant chercheurs, entreprises, étudiants et passionnés autour des enjeux de l’IA. Pour accompagner cette journée, une application web mobile a été conçue afin de centraliser toutes les informations pratiques et améliorer l’expérience des participants."
+      },
+      "objectives": [
+        "Offrir un accès fluide au programme de la journée, aux conférences et aux ateliers.",
+        "Permettre aux participants de consulter facilement les informations sur les intervenants et les horaires.",
+        "Intégrer un plan interactif du site pour faciliter l’orientation sur place."
+      ],
+      "solutions": [
+        "Progressive Web App téléchargeable directement depuis le navigateur.",
+        "Fiches complètes des conférenciers avec bio, photo et sujet d’intervention.",
+        "Plan du parc de l’événement avec repères pour les salles, stands et espaces d’ateliers.",
+        "Interface responsive pensée mobile-first, avec navigation simple et directe."
+      ],
+      "role": [
+        "Développement complet de la PWA en Next.js, avec liaison dynamique aux données via Drizzle.",
+        "Conception de l’architecture technique de l’application (frontend, backend, base de données).",
+        "Mise en ligne, support jour J et ajustements durant l’événement."
+      ],
+      "result": {
+        "description": "Une application stable et performante, accessible instantanément à tous les participants. - Un premier événement bien accompagné par un outil digital clair, simple et efficace."
+      },
+      "technologies": {
+        "frontend": ["<strong>Frontend :</strong> Next.js - Tailwind CSS - TypeScript"],
+        "backend": "<strong>Backend :</strong> Next.js - Drizzle - PostgreSQL",
+        "infrastructure": "<strong>Infrastructure :</strong> OVH Public Cloud - NeonDB - Nginx"
+      },
+      "images": [
+        "/images/projects/normandie-ai/normandie-ai-1.png",
+        "/images/projects/normandie-ai/normandie-ai-2.png"
+      ]
+    },
+    {
+      "slug": "guide-en-magasin-leclerc-saint-etienne-du-rouvray",
+      "title": "Guide en magasin - Leclerc",
+      "context": {
+        "description": "Dans le cadre d’un projet pilote pour l’enseigne Leclerc Saint-Étienne du Rouvray, notre équipe a été sollicitée pour concevoir une solution numérique multicanale, pensée pour améliorer l’expérience client en magasin tout en centralisant les retours utilisateurs pour le personnel."
+      },
+      "objectives": [
+        "Fluidifier l’orientation des clients dans les rayons grâce à une application guidée.",
+        "Permettre la consultation des offres promotionnelles en cours.",
+        "Simplifier la gestion des réclamations clients.",
+        "Fournir un outil back-office pour le traitement de ces retours.",
+        "Créer une solution facilement déployable en magasin (sans installation via stores)."
+      ],
+      "solutions": [
+        "Progressive Web App (PWA) accessible par QR code ou URL, responsive et ergonomique, sans téléchargement nécessaire.",
+        "Recherche de produits par mots-clés avec géolocalisation dans le magasin.",
+        "Génération d’un itinéraire en rayon.",
+        "Module de réclamations vocales ou textuelles.",
+        "Accès au catalogue numérique.",
+        "Déclinaison borne tactile, pour une interface adaptée à l’interaction physique en point de vente.",
+        "Dashboard d’administration pour Visualiser, trier et répondre aux réclamations.",
+        "Gérer le contenu dynamique affiché sur les applications.",
+        "Suivre les statistiques d’usage."
+      ],
+      "role": [
+        "Participation à la conception UX/UI de l’ensemble des interfaces (mobile, borne, dashboard).",
+        "Développement de la PWA et adaptation aux contraintes mobile.",
+        "Intégration responsive pour la borne d’accueil.",
+        "Mise en place de l’architecture backend (API, base de données, sécurité).",
+        "Développement du back-office administrateur pour accéder aux réclamations et statistiques.",
+        "Collaboration étroite avec le client pour itérations et ajustements.",
+        "Mise en ligne des applications."
+      ],
+      "result": {
+        "description": "Un prototype complet, déployé en magasin. Le projet a servi de base pour une solution duplicable dans plusieurs points de vente, avec un socle technique fiable, une interface intuitive, et une forte orientation “expérience utilisateur”."
+      },
+      "technologies": {
+        "frontend": [
+          "<strong>Frontend (PWA) :</strong> Next.js - Tailwind CSS - TypeScript",
+          "<strong>Frontend (Back-office) :</strong> React - Tailwind CSS - TypeScript"
+        ],
+        "backend": "<strong>Backend :</strong> Nest.js - Prisma - PostgreSQL",
+        "infrastructure": "<strong>Infrastructure :</strong> VPS OVH - Amazon S3 - Nginx - Matomo"
+      },
+      "images": [
+        "/images/projects/leclerc/leclerc-1.png",
+        "/images/projects/leclerc/leclerc-2.png",
+        "/images/projects/leclerc/leclerc-3.png",
+        "/images/projects/leclerc/leclerc-4.png"
+      ]
+    }
+  ]
+}
