@@ -1,88 +1,75 @@
-import { hexToRgba } from "~/lib/color";
+import { ProjectCard } from "./project-card";
 
-const projects = [
+export type Project = {
+  title: string;
+  description: string;
+  image: string;
+  link: string;
+  color: string;
+};
+
+type ProjectsSectionProps = {
+  projects?: Project[];
+};
+
+const defaultProjects: Project[] = [
   {
     title: "Armada 2023",
     description: "Application mobile officielle de l'Armada 2023",
     image: "/images/projects/armada.png",
-    link: "/projects/armada",
+    link: "/projects/armada-2023",
     color: "#040cbc",
   },
   {
-    title: "Lena - Assistant IA",
-    description: "Evreux Porte de Normandie",
+    title: "Assistant IA - Évreux Normandie Attractivité",
+    description:
+      "Chatbot propulsé par l'IA avec une approche RAG + Dashboard d'alimentation de la base de connaissances",
     image: "/images/projects/epn.png",
-    link: "/projects/armada",
+    link: "/projects/assistant-ia-evreux-normandie-attractivite",
     color: "#FFE711",
   },
   {
-    title: "PWA - Normandie AI",
-    description: "Normandie AI",
+    title: "Application événementielle – Normandie.AI",
+    description:
+      "Accès et découverte du programme, conférences et ateliers de l'évènement",
     image: "/images/projects/normandie-ai.png",
-    link: "/projects/armada",
+    link: "/projects/application-evenementielle-normandie-ai",
     color: "#B571FA",
   },
   {
-    title: "Hector - Guide en magasin",
-    description: "Leclerc Saint-Etienne du Rouvray",
-    image: "/images/projects/armada.png",
-    link: "/projects/armada",
+    title: "Guide en magasin - Leclerc",
+    description:
+      "Application web mobile pour le guidage en magasin + Dashboard de gestion de réclamations",
+    image: "/images/projects/leclerc.png",
+    link: "/projects/guide-en-magasin-leclerc-saint-etienne-du-rouvray",
     color: "#ff7f50",
   },
 ];
 
-const ProjectsSection = () => {
+const ProjectsSection = ({ projects = defaultProjects }: ProjectsSectionProps) => {
   return (
-    <section className="container mx-auto flex min-h-screen justify-center px-6">
-      <div className="xs:max-w-screen-xs relative z-20 flex w-full flex-col gap-y-8 px-5 sm:max-w-screen-sm sm:gap-y-10 sm:px-0 md:max-w-screen-md md:gap-y-12 lg:max-w-screen-lg lg:gap-y-16">
+    <section className="container mx-auto min-h-screen px-6 pt-12 pb-20">
+      <h2 className="font-acorn text-sarcele-300 mb-12 w-fit text-[clamp(3.5rem,0.5692rem+6.3vw,8rem)]">
+        Quelques projets
+      </h2>
+
+      <div className="xs:max-w-screen-xs relative z-20 mx-auto flex w-full flex-col gap-y-8 px-5 sm:max-w-screen-sm sm:gap-y-10 sm:px-0 md:max-w-screen-md md:gap-y-12 lg:max-w-screen-lg lg:gap-y-16">
         {projects.map((project) => (
-          <div
-            key={project.title}
-            className="xs:h-[380px] group relative flex h-[280px] items-center justify-center rounded-3xl bg-[#40756c]/50 p-2 shadow-[0_40px_80px_#062c1680] outline outline-[#16a78f]/95 sm:h-[400px] md:h-[450px] lg:h-[600px]"
-          >
-            <div className="absolute inset-x-0 top-0 z-[10] mb-[-1px] h-[1px] bg-[linear-gradient(to_right,#0000_20%,#f2fff4_50%,#0000_80%)]" />
-            <a
-              href={project.link}
-              target="_blank"
-              className="group relative h-full w-full cursor-pointer overflow-hidden rounded-[calc(1.5rem-0.5rem)] bg-[linear-gradient(190deg,#128471,#0b5145_50%)] px-7 pt-8 ring-1 ring-white/20 transition-all duration-500 ease-[cubic-bezier(.165,.84,.44,1)] lg:hover:ring-white/50"
-            >
-              <div className="absolute inset-x-0 top-0 z-[10] mb-[-1px] h-[1px] bg-[linear-gradient(to_right,#0000_20%,#f2f2ff_50%,#0000_80%)]" />
-              <div
-                className="absolute inset-0 z-0 opacity-100 transition-all duration-500 lg:opacity-0 lg:group-hover:opacity-100"
-                style={{
-                  background: `radial-gradient(circle at 50% 0%, ${hexToRgba(
-                    project.color,
-                    0.69,
-                  )}, #0b5145)`,
-                }}
-              />
-              <div className="relative z-10 flex w-full items-start justify-between">
-                <div className="flex flex-col gap-y-2">
-                  <h1 className="font-acorn xs:text-3xl text-2xl tracking-wide text-white">
-                    {project.title}
-                  </h1>
-                  <p className="text-sm text-white xl:text-base">{project.description}</p>
-                </div>
-                <img
-                  alt="arrow-right"
-                  loading="lazy"
-                  className="ease-in-out-quad size-8 -rotate-90 transition-all duration-700 lg:group-hover:translate-x-[10px]"
-                  src="/svg/scroll-arrow.svg"
-                />
-              </div>
-              <img
-                alt="Hirely"
-                loading="lazy"
-                width="1380"
-                height="884"
-                decoding="async"
-                data-nimg="1"
-                className="xs:mt-10 mx-auto mt-2.5 flex-1 translate-y-4 rounded-3xl object-cover shadow-2xl transition-all duration-500 sm:max-w-[80%] lg:mt-6 lg:group-hover:translate-y-0"
-                src={project.image}
-              />
-            </a>
-          </div>
+          <ProjectCard key={project.title} project={project} />
         ))}
+      </div>
+      <div className="mt-12 flex flex-col items-center gap-8 md:flex-row md:gap-8">
+        <h2 className="font-acorn text-sarcele-300 text-center text-[clamp(3.5rem,0.5692rem+6.3vw,8rem)] md:text-left">
+          En savoir plus ?
+        </h2>
+        <a
+          href="https://drive.google.com/file/d/1sgsltOIyik-MHUHlspih7rs8BqXyb5l2/view?usp=drive_link"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="border-sarcele-300 hover:bg-sarcele-300/10 relative mt-3 rounded-full border px-8 py-3 shadow-lg transition-all duration-300"
+        >
+          <span className="text-sarcele-300 relative text-xl font-medium">Mon CV</span>
+        </a>
       </div>
     </section>
   );
