@@ -38,12 +38,15 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
             src="/svg/scroll-arrow.svg"
           />
         </div>
-        <img
-          alt="Project"
-          loading="lazy"
-          className="xs:mt-10 mx-auto mt-2.5 h-[470px] flex-1 translate-y-4 rounded-3xl object-cover shadow-2xl transition-all duration-500 sm:max-w-[80%] lg:mt-6 lg:group-hover:translate-y-0"
-          src={project.image}
-        />
+        <picture>
+          <source srcSet={project.image.replace(".png", ".webp")} type="image/webp" />
+          <img
+            alt="Project"
+            loading="lazy"
+            className="xs:mt-10 mx-auto mt-2.5 h-[470px] flex-1 translate-y-4 rounded-3xl object-cover shadow-2xl transition-all duration-500 sm:max-w-[80%] lg:mt-6 lg:group-hover:translate-y-0"
+            src={project.image}
+          />
+        </picture>
       </Link>
     </div>
   );

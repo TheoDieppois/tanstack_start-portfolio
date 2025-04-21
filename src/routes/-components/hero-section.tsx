@@ -45,20 +45,24 @@ export const HeroSection = () => {
         </p>
       </div>
 
-      <img
-        ref={imageRef}
-        src="/images/theo.png"
-        alt=""
-        className="relative hidden aspect-[2/3] h-[450px] rounded-2xl rounded-tl-[100px] object-cover lg:block"
-        style={{
-          clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
+      <picture>
+        <source srcSet="/images/theo.webp" type="image/webp" />
+        <img
+          ref={imageRef}
+          src="/images/theo.png"
+          alt="Photo de Théo Dieppois"
+          className="relative hidden aspect-[2/3] h-[450px] rounded-2xl rounded-tl-[100px] object-cover lg:block"
+          style={{
+            clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
 
-          transition: "clip-path 0.5s ease-in-out",
-        }}
-      />
+            transition: "clip-path 0.5s ease-in-out",
+          }}
+        />
+      </picture>
       <div className="absolute right-0 bottom-10 left-0 mt-10 flex w-full items-center justify-center">
         <img
           ref={scrollArrowRef}
+          aria-disabled="true"
           alt="scroll-indicator"
           loading="lazy"
           width="45"
