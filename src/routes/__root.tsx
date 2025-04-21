@@ -12,7 +12,10 @@ import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import "lenis/dist/lenis.css";
 import appCss from "~/styles/app.css?url";
 
-import { useLenis } from "~/hooks/useLenis";
+import { IntroProvider } from "~/context/intro-context";
+import { useLenis } from "~/hooks/use-lenis";
+import { Footer } from "./-components/footer";
+import { IntroLoader } from "./-components/intro-loader";
 
 export const Route = createRootRouteWithContext<{
   queryClient: QueryClient;
@@ -27,7 +30,7 @@ export const Route = createRootRouteWithContext<{
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: "React TanStarter",
+        title: "Théo Dieppois - Développeur Full Stack",
       },
     ],
     links: [{ rel: "stylesheet", href: appCss }],
@@ -52,7 +55,11 @@ function RootDocument({ children }: { readonly children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body className="bg-sarcele-800">
-        {children}
+        <IntroProvider>
+          <IntroLoader />
+          {children}
+          <Footer />
+        </IntroProvider>
 
         <ReactQueryDevtools buttonPosition="bottom-left" />
         <TanStackRouterDevtools position="bottom-right" />

@@ -1,37 +1,71 @@
+import { useHeroAnimation } from "~/routes/-hooks/use-hero-animation";
+
 export const HeroSection = () => {
+  const { heroTextRef, heroParagraphRef, scrollArrowRef, starLeftRef, imageRef } =
+    useHeroAnimation();
+
   return (
-    <section className="container mx-auto grid min-h-screen grid-cols-1 place-content-center gap-6 px-6">
-      <div className="xs:px-0 flex flex-col items-center justify-center gap-y-8 px-1.5 sm:gap-y-16">
+    <section className="container mx-auto flex min-h-screen items-center justify-between gap-6 px-6">
+      <div className="xs:px-0 flex flex-col gap-y-8 sm:gap-y-16">
         <div className="relative">
           <img
+            ref={starLeftRef}
             src="/svg/star.svg"
             alt=""
-            className="xs:-left-10 xs:-top-12 absolute -top-10 -left-32 hidden sm:-top-14 sm:-left-16 md:-left-24 md:block 2xl:-top-16 2xl:-left-36"
+            className="xs:-left-10 xs:-top-12 absolute -top-10 -left-32 hidden scale-0 transition-transform duration-500 sm:-top-14 sm:-left-16 md:-left-24 md:block 2xl:-top-16 2xl:-left-36"
           />
 
-          <h1 className="hero-text font-acorn text-sarcele-300 text-center leading-[1.4]">
-            Hi. I'm Theo. <br />A Developer.
+          <h1
+            ref={heroTextRef}
+            className="hero-text font-acorn text-sarcele-300 text-left leading-[1.4] [&_.char]:translate-y-36 [&_.char]:transition-transform [&_.char]:duration-500"
+          >
+            <span
+              style={{
+                clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+              }}
+            >
+              Bonjour, moi
+            </span>
+            <br />
+            <span
+              style={{
+                clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+              }}
+            >
+              c'est Théo.
+            </span>
           </h1>
-          <img
-            src="/svg/star.svg"
-            alt=""
-            className="xs:-right-10 xs:-bottom-12 absolute -right-32 -bottom-10 hidden sm:-right-16 sm:-bottom-14 md:-right-24 md:block 2xl:-right-36 2xl:-bottom-16"
-          />
         </div>
-        <p className="text-sarcele-300 hero-paragraph-text max-w-[48rem]">
-          I'm a developer with a passion for building web applications. I'm currently
-          working as a developer at a company called ABECEDAIRE.
+        <p
+          ref={heroParagraphRef}
+          className="text-sarcele-300 hero-paragraph-text max-w-[48rem] translate-y-10 opacity-0 transition-transform duration-500"
+        >
+          Développeur Full Stack avec plus de 4 ans d’expérience dans la conception et la
+          mise en œuvre de solutions web et mobiles.
         </p>
       </div>
-      <div className="xs:bottom-10 xs:absolute xs:left-0 relative mt-10 flex w-full items-center justify-center">
+
+      <img
+        ref={imageRef}
+        src="/images/theo.png"
+        alt=""
+        className="relative hidden aspect-[2/3] h-[450px] rounded-2xl rounded-tl-[100px] object-cover lg:block"
+        style={{
+          clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
+
+          transition: "clip-path 0.5s ease-in-out",
+        }}
+      />
+      <div className="absolute right-0 bottom-10 left-0 mt-10 flex w-full items-center justify-center">
         <img
+          ref={scrollArrowRef}
           alt="scroll-indicator"
           loading="lazy"
           width="45"
           height="45"
           decoding="async"
           data-nimg="1"
-          className="xs:h-12 xs:w-12 animate-moveUpAndFade h-8 w-8"
+          className="xs:h-12 xs:w-12 animate-moveUpAndFade h-8 w-8 scale-0 transition-transform duration-500"
           src="/svg/scroll-arrow.svg"
         />
       </div>
