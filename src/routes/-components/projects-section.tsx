@@ -63,7 +63,7 @@ const ProjectsSection = ({ projects = defaultProjects }: ProjectsSectionProps) =
           En savoir plus ?
         </h2>
         <a
-          href="https://drive.google.com/file/d/1sgsltOIyik-MHUHlspih7rs8BqXyb5l2/view?usp=drive_link"
+          href="https://drive.google.com/file/d/1c6Kg974uU0xIYfpInPAUafW7XgiD4JA4/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           className="border-sarcele-300 hover:bg-sarcele-300/10 relative mt-3 rounded-full border px-8 py-3 shadow-lg transition-all duration-300"
