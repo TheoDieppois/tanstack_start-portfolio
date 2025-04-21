@@ -17,7 +17,7 @@ export const HeroSection = () => {
 
           <h1
             ref={heroTextRef}
-            className="hero-text font-acorn text-sarcele-300 text-left leading-[1.4] [&_.char]:translate-y-36 [&_.char]:transition-transform [&_.char]:duration-500"
+            className="hero-text font-acorn text-sarcele-300 text-left leading-[1.4] [&_.char]:translate-y-[100%] [&_.char]:transition-transform [&_.char]:duration-500"
           >
             <span
               style={{
