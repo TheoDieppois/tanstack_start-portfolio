@@ -41,11 +41,15 @@
   }
 
   .hero-text {
-    font-size: clamp(4rem, 0.5692rem + 8.5vw, 12rem);
+    font-size: clamp(3.2rem, 0.5692rem + 8vw, 12rem);
+  }
+
+  .hero-video-text {
+    font-size: clamp(2.8rem, 0.5692rem + 7.2vw, 7rem);
   }
 
   .hero-paragraph-text {
-    @apply text-center leading-relaxed;
+    @apply leading-relaxed;
     font-size: clamp(1rem, 0.8852rem + 0.3898vw, 1.375rem);
   }
 
